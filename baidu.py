@@ -1,0 +1,19 @@
+import urllib.request
+url='https://fanyi.baidu.com/v2transapi'
+data={}
+data['i']='桑飞'
+data['from']='AUTO'
+data['to']='AUTO'
+data['smartresult']='dict'
+data['client']='fanyideskweb'
+data['salt']='1497512226700'
+data['sign']='a0d2b9d367c98b7b3c8affe79cc0419b'
+data['doctype']='json'
+data['version']='2.1'
+data['keyfrom']='fanyi.web'
+data['action']='FY_BY_CLICKBUTTON'
+data['typoResult']='true'
+data=urllib.parse.urlencode(data).encode("utf-8")
+a=urllib.request.urlopen(url,data)
+b=a.read().decode("utf-8")
+print(b)
